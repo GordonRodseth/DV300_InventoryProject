@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gordon\\source\\repos\\Inventory\\Inventory\\Inventory.csproj": {}
+    "C:\\Users\\Gordon\\Documents\\GitHub\\DV300_InventoryProject\\Inventory\\Inventory\\Inventory.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gordon\\source\\repos\\Inventory\\Inventory\\Inventory.csproj": {
+    "C:\\Users\\Gordon\\Documents\\GitHub\\DV300_InventoryProject\\Inventory\\Inventory\\Inventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gordon\\source\\repos\\Inventory\\Inventory\\Inventory.csproj",
+        "projectUniqueName": "C:\\Users\\Gordon\\Documents\\GitHub\\DV300_InventoryProject\\Inventory\\Inventory\\Inventory.csproj",
         "projectName": "Inventory",
-        "projectPath": "C:\\Users\\Gordon\\source\\repos\\Inventory\\Inventory\\Inventory.csproj",
+        "projectPath": "C:\\Users\\Gordon\\Documents\\GitHub\\DV300_InventoryProject\\Inventory\\Inventory\\Inventory.csproj",
         "packagesPath": "C:\\Users\\Gordon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gordon\\source\\repos\\Inventory\\Inventory\\obj\\",
+        "outputPath": "C:\\Users\\Gordon\\Documents\\GitHub\\DV300_InventoryProject\\Inventory\\Inventory\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gordon\\AppData\\Roaming\\NuGet\\NuGet.Config",

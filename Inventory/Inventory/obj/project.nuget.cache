@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JIvnva0GSQbTHNaFOMtdo7yiRowL02hEBs7IHT9h08kNFXMYOQTZOURX9EjJ/4pMo3RZnBCWYU2sjZ6YmRfE1Q==",
+  "dgSpecHash": "D3MB08iqzGMFYuZF2Vek9ZmZM005SdC4vjdQUS+D4k5VZ0E5VpWSM7xij9LkmBd88+Tws+IxCYLYp3vEHlQuKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gordon\\source\\repos\\Inventory\\Inventory\\Inventory.csproj",
+  "projectFilePath": "C:\\Users\\Gordon\\Documents\\GitHub\\DV300_InventoryProject\\Inventory\\Inventory\\Inventory.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gordon\\.nuget\\packages\\humanizer.core\\2.13.14\\humanizer.core.2.13.14.nupkg.sha512",
     "C:\\Users\\Gordon\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

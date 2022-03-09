@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory", "Inventory\Inventory.csproj", "{D626586E-1675-4563-97A6-1837191B46AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F27618E7-0B99-4BA1-84CD-73993F327B89}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\vectors\Aus Cattle Dog.png = ..\..\..\Desktop\vectors\Aus Cattle Dog.png
+		..\..\..\Desktop\vectors\Aussie shepherd.png = ..\..\..\Desktop\vectors\Aussie shepherd.png
+		..\..\..\Desktop\vectors\Beagle.png = ..\..\..\Desktop\vectors\Beagle.png
+		..\..\..\Desktop\vectors\bichon frise.png = ..\..\..\Desktop\vectors\bichon frise.png
+		..\..\..\Desktop\vectors\Chihuahua.png = ..\..\..\Desktop\vectors\Chihuahua.png
+		..\..\..\Desktop\vectors\Cocker Spaniel.png = ..\..\..\Desktop\vectors\Cocker Spaniel.png
+		..\..\..\Desktop\vectors\Collie.png = ..\..\..\Desktop\vectors\Collie.png
+		..\..\..\Desktop\vectors\Corgi.png = ..\..\..\Desktop\vectors\Corgi.png
+		..\..\..\Desktop\vectors\Daschund.png = ..\..\..\Desktop\vectors\Daschund.png
+		..\..\..\Desktop\vectors\English Springer Spaniel.png = ..\..\..\Desktop\vectors\English Springer Spaniel.png
+		..\..\..\Desktop\vectors\german shepherd.png = ..\..\..\Desktop\vectors\german shepherd.png
+		..\..\..\Desktop\vectors\Golden Retriever.png = ..\..\..\Desktop\vectors\Golden Retriever.png
+		..\..\..\Desktop\vectors\Greyhound.png = ..\..\..\Desktop\vectors\Greyhound.png
+		..\..\..\Desktop\vectors\husky.png = ..\..\..\Desktop\vectors\husky.png
+		Icon1.ico = Icon1.ico
+		Icon2.ico = Icon2.ico
+		..\..\..\Desktop\vectors\Jack Russel.png = ..\..\..\Desktop\vectors\Jack Russel.png
+		..\..\..\Desktop\vectors\KC Spaniel.png = ..\..\..\Desktop\vectors\KC Spaniel.png
+		..\..\..\Desktop\vectors\Labrador.png = ..\..\..\Desktop\vectors\Labrador.png
+		..\..\..\Desktop\vectors\logo.png = ..\..\..\Desktop\vectors\logo.png
+		..\..\..\Desktop\vectors\Maltese Poodle.png = ..\..\..\Desktop\vectors\Maltese Poodle.png
+		..\..\..\Desktop\vectors\pekingese.png = ..\..\..\Desktop\vectors\pekingese.png
+		..\..\..\Desktop\vectors\pointer.png = ..\..\..\Desktop\vectors\pointer.png
+		..\..\..\Desktop\vectors\Pomeranian.png = ..\..\..\Desktop\vectors\Pomeranian.png
+		..\..\..\Desktop\vectors\Poodle.png = ..\..\..\Desktop\vectors\Poodle.png
+		..\..\..\Desktop\vectors\pug.png = ..\..\..\Desktop\vectors\pug.png
+		..\..\..\Desktop\vectors\Schnauzer.png = ..\..\..\Desktop\vectors\Schnauzer.png
+		..\..\..\Desktop\vectors\Shih tzu.png = ..\..\..\Desktop\vectors\Shih tzu.png
+		..\..\..\Desktop\vectors\WH terrier.png = ..\..\..\Desktop\vectors\WH terrier.png
+		..\..\..\Desktop\vectors\Yorkie.png = ..\..\..\Desktop\vectors\Yorkie.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D626586E-1675-4563-97A6-1837191B46AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D626586E-1675-4563-97A6-1837191B46AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D626586E-1675-4563-97A6-1837191B46AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D626586E-1675-4563-97A6-1837191B46AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60F11FF5-EBBC-4E14-88B5-3C3FCDAB8315}
+	EndGlobalSection
+EndGlobal

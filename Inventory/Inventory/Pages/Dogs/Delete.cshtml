@@ -1,0 +1,46 @@
+﻿@page
+@model Inventory.Pages.Dogs.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Dog</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dog.MotherID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dog.MotherID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dog.FatherID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dog.FatherID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dog.KennelID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dog.KennelID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dog.Pedigree)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dog.Pedigree)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Dog.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

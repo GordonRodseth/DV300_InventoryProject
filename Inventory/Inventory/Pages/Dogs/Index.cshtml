@@ -1,0 +1,54 @@
+﻿@page
+@model Inventory.Pages.Dogs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].MotherID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].FatherID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].KennelID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dog[0].Pedigree)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dog) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatherID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KennelID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pedigree)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

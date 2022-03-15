@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -16,6 +17,8 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #FCF4E9;
+    font-family: 'Rubik', sans-serif;
+    color: #007CC2;
 }
 
 .navbar {
@@ -28,8 +31,65 @@ body {
     font-weight:bold;
 }
 
-.nav-link{
+.navlink{
     color:white;
     font-size: large;
+    text-decoration: none;
     float: right;
+    margin-right:5vh;
+    opacity:100%;
+}
+
+.navlink:hover {
+        color: #F6D5A9
+    }
+
+.dog_img {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    margin-bottom: 2vh;
+    width:100%
+}
+
+.dog_img_cont{
+    height:45vh;
+    
+    position:relative;
+}
+
+.welcome_img {
+    height: 45vh;
+    margin-bottom: 2vh;
+}
+
+.adopt_form {
+    background-color: white;
+    border-width: 3px;
+    border-color: #006DAA;
+    border-radius:25px;
+    border-style:solid;
+    padding:2vh;
+    margin-top:2vh;
+}
+option {
+    color: #006DAA;
+}
+
+btn, btn-primary {
+    background-color: #006DAA;
+}
+
+.form-group{
+    margin:1vh;
+}
+.dog_card {
+    background-color: white;
+    border-width: 3px;
+    border-color: #006DAA;
+    border-radius: 25px;
+    border-style: solid;
+    height:30vh;
+    margin:5vh;
 }

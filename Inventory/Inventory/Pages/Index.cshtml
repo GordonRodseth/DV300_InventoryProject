@@ -2,10 +2,18 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    var dogs = ViewData["PureBreeds"] as Array;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to The Inventory</h1>
-    <h3>Home to 20 Dogs</h3>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h4 style="margin-top:5vh"> Welcome To</h4>
+    <h1 class="display-4">The Inventory</h1>
+    
+    <div class="welcome_img row col-12">
+        <div class="dog_img_cont col-12">
+            <img class="dog_img" src=~/img/welcome_img.svg />
+        </div>
+    </div>
+
+    <h4>Home to 20 Dogs</h4>
 </div>

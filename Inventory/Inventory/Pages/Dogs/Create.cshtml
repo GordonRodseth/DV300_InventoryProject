@@ -3,55 +3,76 @@
 
 @{
     ViewData["Title"] = "Create";
+
+    var purebreeds = ViewData["Purebreeds"] as Array;
+
 }
 
-<h1>Create</h1>
 
-<h4>Dog</h4>
-<hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <form method="post">
+    <div class="row col-12">
+        <div class="col-3"></div>
+
+        <div class="row col-6">
+            <h1 style="margin-top:5vh">Adopt a Dog</h1>
+                    <form method="post" class="adopt_form row col-12">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Dog.Name" class="control-label"></label>
-                <input asp-for="Dog.Name" class="form-control" />
-                <span asp-validation-for="Dog.Name" class="text-danger"></span>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="Dog.BreedID" class="control-label">Breed</label>
+                    <select asp-for="Dog.BreedID" class="form-control">
+                        <option value=0>---</option>
+                        @foreach (Models.Breed dog in purebreeds)
+                        {
+                            <option value=@dog.Id>@dog.BreedName</option>
+                        }
+                    </select> 
+                    <span asp-validation-for="Dog.BreedID" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Dog.BreedID" class="control-label"></label>
-                <input asp-for="Dog.BreedID" class="form-control" />
-                <span asp-validation-for="Dog.BreedID" class="text-danger"></span>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="Dog.Name" class="control-label"></label>
+                    <input asp-for="Dog.Name" class="form-control" />
+                    <span asp-validation-for="Dog.Name" class="text-danger"></span>
+                </div>
+
+                <!--<div class="form-group">
+                    <label asp-for="Dog.MotherID" class="control-label"></label>
+                    <input asp-for="Dog.MotherID" class="form-control" />
+                    <span asp-validation-for="Dog.MotherID" class="text-danger"></span>
+                </div>-->
+               <!-- <div class="form-group">
+                    <label asp-for="Dog.FatherID" class="control-label"></label>
+                    <input asp-for="Dog.FatherID" class="form-control" />
+                    <span asp-validation-for="Dog.FatherID" class="text-danger"></span>
+                </div>-->
+                <div class="form-group">
+                    <label asp-for="Dog.KennelID" class="control-label">Kennel</label>
+                    <input asp-for="Dog.KennelID" class="form-control" />
+                    <span asp-validation-for="Dog.KennelID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Dog.Pedigree" class="control-label"></label>
+                    <input asp-for="Dog.Pedigree" class="form-control" />
+                    <span asp-validation-for="Dog.Pedigree" class="text-danger"></span>
+                </div>
             </div>
+
             <div class="form-group">
-                <label asp-for="Dog.MotherID" class="control-label"></label>
-                <input asp-for="Dog.MotherID" class="form-control" />
-                <span asp-validation-for="Dog.MotherID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dog.FatherID" class="control-label"></label>
-                <input asp-for="Dog.FatherID" class="form-control" />
-                <span asp-validation-for="Dog.FatherID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dog.KennelID" class="control-label"></label>
-                <input asp-for="Dog.KennelID" class="form-control" />
-                <span asp-validation-for="Dog.KennelID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dog.Pedigree" class="control-label"></label>
-                <input asp-for="Dog.Pedigree" class="form-control" />
-                <span asp-validation-for="Dog.Pedigree" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Adopt" class="btn btn-primary" style="background-color:#006DAA;"/>
             </div>
         </form>
+        </div>
+
+        <div class="col-3"></div>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    
 </div>
 
 @section Scripts {

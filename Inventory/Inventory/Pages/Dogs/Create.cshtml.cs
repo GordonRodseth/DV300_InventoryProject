@@ -18,15 +18,22 @@ namespace Inventory.Pages.Dogs
         public CreateModel(Inventory.Data.InventoryContext context)
         {
             _context = context;
+
+
         }
 
         public IActionResult OnGet()
         {
+            Breed[] breeds;
+            breeds = _context.GetBreeds();
+            ViewData["Purebreeds"] = breeds;
             return Page();
         }
 
         [BindProperty]
         public Dog Dog { get; set; }
+
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -40,6 +47,11 @@ namespace Inventory.Pages.Dogs
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+
+
         }
+
     }
+
+
 }

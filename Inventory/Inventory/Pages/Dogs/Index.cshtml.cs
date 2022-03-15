@@ -20,10 +20,17 @@ namespace Inventory.Pages.Dogs
             _context = context;
         }
 
+
         public IList<Dog> Dog { get;set; }
+
+        public IList<Breed> Breed{ get; set; }
 
         public async Task OnGetAsync()
         {
+            Breed[] breeds;
+            breeds = _context.GetBreeds();
+            ViewData["Purebreeds"] = breeds;
+
             Dog = await _context.Dog.ToListAsync();
         }
     }

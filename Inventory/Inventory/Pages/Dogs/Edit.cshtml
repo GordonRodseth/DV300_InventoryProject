@@ -7,7 +7,6 @@
 
 <h1>Edit</h1>
 
-<h4>Dog</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,19 +19,16 @@
                 <span asp-validation-for="Dog.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Dog.BreedID" class="control-label"></label>
-                <input asp-for="Dog.BreedID" class="form-control" />
-                <span asp-validation-for="Dog.BreedID" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dog.BreedID" />
             </div>
             <div class="form-group">
-                <label asp-for="Dog.MotherID" class="control-label"></label>
-                <input asp-for="Dog.MotherID" class="form-control" />
-                <span asp-validation-for="Dog.MotherID" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dog.MotherID" />
             </div>
             <div class="form-group">
-                <label asp-for="Dog.FatherID" class="control-label"></label>
-                <input asp-for="Dog.FatherID" class="form-control" />
-                <span asp-validation-for="Dog.FatherID" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dog.FatherID" />
             </div>
             <div class="form-group">
                 <label asp-for="Dog.KennelID" class="control-label"></label>
@@ -40,9 +36,8 @@
                 <span asp-validation-for="Dog.KennelID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Dog.Pedigree" class="control-label"></label>
-                <input asp-for="Dog.Pedigree" class="form-control" />
-                <span asp-validation-for="Dog.Pedigree" class="text-danger"></span>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dog.Pedigree" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

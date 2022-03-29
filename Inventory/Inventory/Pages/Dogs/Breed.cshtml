@@ -1,0 +1,121 @@
+﻿@page
+@model Inventory.Pages.Dogs.BreedModel
+
+@{
+    ViewData["Title"] = "Breed";
+
+    //var breeds = ViewData["Breeds"] as Array;
+    var breed= ViewData["breed"] as string;
+    var parent1 = ViewData["Parent1"] as string;
+    var parent2 = ViewData["Parent2"] as string;
+
+    var breedname = "";
+    var breedimg = "";
+
+
+}
+
+
+
+<div class="row">
+    <div class="row col-12">
+        <div class="col-3"></div>
+
+        <div class="row col-6">
+
+            <h1 style="margin-top:5vh">New Puppy</h1>
+                    <form method="post" class="adopt_form row col-12">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row col-6">
+                    @foreach (var dogbreed in Model.Breeds)
+                {
+                    if(breed == dogbreed.Id.ToString())
+                        {
+                        breedname = dogbreed.BreedName;
+                        breedimg = dogbreed.ImgUrl;
+
+                        
+
+                        <div class="col-12 form-group">
+                        <label asp-for="Dog.BreedID" class="control-label">@dogbreed.BreedName</label>
+                        <input type=hidden asp-for="Dog.BreedID" class="form-control" value=@dogbreed.Id>
+                        <span asp-validation-for="Dog.BreedID" class="text-danger"></span>
+                        </div>
+                        <img class="col-12 dog_img_create" src=@breedimg> 
+                        
+                        }
+                    }
+
+                    @foreach (var dog in Model.Dogs)
+                    {
+                        if(dog.ID.ToString() == parent1)
+                        {
+                        var momname = dog.Name;
+
+                <div class="form-group">
+                    <label asp-for="Dog.MotherID" class="control-label">Parent1: @dog.Name</label>
+                    <input asp-for="Dog.MotherID" class="form-control" value=@dog.ID type="hidden"/>
+                    <span asp-validation-for="Dog.MotherID" class="text-danger"></span>
+                </div>
+
+                        }
+                    }
+
+                    @foreach (var dog in Model.Dogs)
+                    {
+                        if(dog.ID.ToString() == parent2)
+                        {
+                        var dadname = dog.Name;
+
+                <div class="form-group">
+                    <label asp-for="Dog.FatherID" class="control-label">Parent2: @dog.Name</label>
+                    <input asp-for="Dog.FatherID" class="form-control" value=@dog.ID type="hidden"/>
+                    <span asp-validation-for="Dog.MotherID" class="text-danger"></span>
+                </div>
+
+                        }
+                    }
+
+
+
+
+
+            </div>
+            <div class="col-6">
+
+                <div class="form-group">
+                    <label asp-for="Dog.Name" class="control-label"></label>
+                    <input asp-for="Dog.Name" class="form-control" />
+                    <span asp-validation-for="Dog.Name" class="text-danger"></span>
+                </div>
+                   
+                <div class="form-group">
+                    <label asp-for="Dog.KennelID" class="control-label">Kennel</label>
+                    <input asp-for="Dog.KennelID" class="form-control" />
+                    <span asp-validation-for="Dog.KennelID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Dog.Pedigree" class="control-label"></label>
+                    <input asp-for="Dog.Pedigree" class="form-control" />
+                    <span asp-validation-for="Dog.Pedigree" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Breed" class="btn btn-primary" style="background-color:#006DAA; float:right"/>
+            </div>
+        </form>
+        </div>
+
+        <div class="col-3"></div>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

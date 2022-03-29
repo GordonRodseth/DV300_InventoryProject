@@ -22,6 +22,8 @@ namespace Inventory.Pages.Dogs
 
         public Dog Dog { get; set; }
 
+        
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)

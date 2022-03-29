@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Create";
 
-    var purebreeds = ViewData["Purebreeds"] as Array;
+    //var breeds = ViewData["Breeds"] as Array;
 
 }
 
@@ -24,7 +24,7 @@
                     <label asp-for="Dog.BreedID" class="control-label">Breed</label>
                     <select asp-for="Dog.BreedID" class="form-control">
                         <option value=0>---</option>
-                        @foreach (Models.Breed dog in purebreeds)
+                        @foreach (var dog in Model.Breeds)
                         {
                             <option value=@dog.Id>@dog.BreedName</option>
                         }

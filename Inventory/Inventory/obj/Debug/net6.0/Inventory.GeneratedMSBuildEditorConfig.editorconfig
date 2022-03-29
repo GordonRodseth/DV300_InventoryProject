@@ -15,6 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/BOne.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xCT25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/Breed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xCcmVlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/Breeding.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xCcmVlZGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/BThree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xCVGhyZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/BTwo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xCVHdvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +53,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/KOne.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xLT25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/KThree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xLVGhyZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Dogs/KTwo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9nc1xLVHdvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gordon/Documents/GitHub/DV300_InventoryProject/Inventory/Inventory/Pages/Error.cshtml]

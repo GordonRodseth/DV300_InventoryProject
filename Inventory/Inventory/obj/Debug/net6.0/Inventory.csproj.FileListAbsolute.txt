@@ -546,3 +546,11 @@ C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\obj\
 C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\obj\Debug\net6.0\Inventory.pdb
 C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\obj\Debug\net6.0\Inventory.genruntimeconfig.cache
 C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\obj\Debug\net6.0\ref\Inventory.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\ZstdNet.dll

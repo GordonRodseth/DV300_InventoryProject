@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Inventory.Data;
 using Inventory.Models;
+using Inventory.Services;
 
 namespace Inventory.Pages.Dogs
 {
@@ -22,11 +23,12 @@ namespace Inventory.Pages.Dogs
 
         }
 
+        public IList<Breed> Breeds { get; set; }
+
         public IActionResult OnGet()
         {
-            Breed[] breeds;
-            breeds = _context.GetBreeds();
-            ViewData["Purebreeds"] = breeds;
+            //Breeds= new List<Breed>();
+            Breeds = new Models.Breeds().allBreeds;
             return Page();
         }
 

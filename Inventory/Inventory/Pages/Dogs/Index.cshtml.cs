@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Inventory.Data;
 using Inventory.Models;
+using Inventory.Services;
 
 namespace Inventory.Pages.Dogs
 {
@@ -22,16 +23,19 @@ namespace Inventory.Pages.Dogs
 
 
         public IList<Dog> Dog { get;set; }
-
-        public IList<Breed> Breed{ get; set; }
+        public IList<Breed> Breeds{ get; set; }
 
         public async Task OnGetAsync()
         {
-            Breed[] breeds;
-            breeds = _context.GetBreeds();
-            ViewData["Purebreeds"] = breeds;
+
+            Breeds = new Models.Breeds().allBreeds;
+            
 
             Dog = await _context.Dog.ToListAsync();
+
+            
+            
         }
+        
     }
 }

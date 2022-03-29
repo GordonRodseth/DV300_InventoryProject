@@ -2,6 +2,8 @@
 {
     public class Breed
     {
+
+
         public int Id { get; set; }
 
         public string BreedName { get; set; }=string.Empty;
@@ -10,7 +12,18 @@
 
         public int Parent1BreedId { get; set; }
         public int Parent2BreedId { get; set; }
+
+
+        public Breed()
+        {
+        }
+        //public Breed(string newBreed)
+        //{
+        //   BreedName = newBreed;
+        // }
+
     }
+
 
 
 

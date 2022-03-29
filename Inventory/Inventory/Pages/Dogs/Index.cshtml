@@ -3,13 +3,16 @@
 
 @{
     ViewData["Title"] = "Index";
-    var purebreeds = ViewData["Purebreeds"] as Array;
+   // var purebreeds = ViewData["Purebreeds"] as Array;
 
 }
 
-<h1 style="margin-top:5vh">Dogs</h1>
+<h1 style="margin-top:5vh">All Dogs</h1>
 
-
+<a style="text-decoration:none; color: grey; margin-right:2%" asp-page="./Index">All Dogs</a> |
+<a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./KOne">Kennel One</a> |
+<a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./KTwo">Kennel Two</a> |
+<a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./KThree">Kennel Three</a>
 
 <div class="dog_cards_row row col-12">
 
@@ -18,7 +21,7 @@
     var breedname= "";
     var breedimg="";
 
-    @foreach (Models.Breed dogbreed in purebreeds)
+    @foreach (var dogbreed in Model.Breeds)
     {
         if(breed == dogbreed.Id)
         {
@@ -34,9 +37,9 @@
             <p style="font-size:x-large; margin-bottom:0">@Html.DisplayFor(modelItem => item.Name)</p>
             <p style="margin-top:1%">@breedname</p>
             <div style="margin-bottom:5%">
-                <a style="text-decoration:none; color: #006DAA;" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a style="text-decoration:none; color: #006DAA;" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a style="text-decoration:none; color: #006DAA;" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a style="text-decoration:none; color: #006DAA; margin-right:7%" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a style="text-decoration:none; color: #006DAA; margin-right:7%" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a style="text-decoration:none; color: red; margin-right:7%" asp-page="./Delete" asp-route-id="@item.ID">Send to Farm</a>
             </div>
         </div>
     </div>

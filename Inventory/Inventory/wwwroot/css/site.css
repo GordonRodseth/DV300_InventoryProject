@@ -53,6 +53,13 @@ body {
     width:100%
 }
 
+.dog_img_create{
+    height:auto;
+    padding:5vh;
+    padding-top:0;
+    padding-bottom:0;
+}
+
 .dog_img_cont{
     height:45vh;
     
@@ -92,4 +99,8 @@ btn, btn-primary {
     border-style: solid;
     height:30vh;
     margin:5vh;
+}
+
+#button {
+    text-decoration:underline;
 }

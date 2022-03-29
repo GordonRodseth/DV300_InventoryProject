@@ -1,0 +1,86 @@
+﻿@page
+@model Inventory.Pages.Dogs.BOneModel
+
+@{
+    ViewData["Title"] = "Breeding";
+   // var purebreeds = ViewData["Purebreeds"] as Array;
+
+}
+
+<h1 style="margin-top:5vh">Breeding</h1>
+
+<a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./Breeding">All Dogs</a> |
+<a style="text-decoration:none; color: grey; margin-right:2%" asp-page="./BOne">Kennel One</a> |
+<a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./BTwo">Kennel Two</a> |
+<a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./BThree">Kennel Three</a>
+
+<div class="dog_cards_row row col-12">
+
+@foreach (var dogbreed in Model.Breeds)//look through all possible breeds
+    {
+            var newdogbreed = dogbreed.Id;
+            var newdogbreedname= dogbreed.BreedName;
+            var newdogimg=dogbreed.ImgUrl;
+
+        foreach (var dog1 in Model.Dog)//look through all available dogs
+            {
+            if (dog1.KennelID==1)
+            {
+                if (dogbreed.Parent1BreedId == dog1.BreedID)//find the dog that can act as the first parent for the desired breed
+                {
+                    var par1=dog1.ID;
+                    foreach (var dog2 in Model.Dog)//look through the available dogs again
+                    {
+                        if (dog2.KennelID == 1)
+                        {
+                        var par2=dog2.ID;
+                        if (dogbreed.Parent2BreedId == dog2.BreedID)//find the other dog that can act as the second parent for desired breed
+                        {
+                            if(dog1.ID != dog2.ID)//make sure the 2 parents are seperate entities
+                            {
+                                newdogimg = dogbreed.ImgUrl;
+
+                                <div class="dog_card col-12 row">
+
+                                    <img src=@newdogimg class="col-3 dog_card_img" style="height: 90%; width:auto; margin-left:5%;"/>
+                                    <div class="col-4 dog_card_info" >
+                                        <h1 style=" margin-top:35%">@newdogbreedname</h1>
+
+                                    </div>
+                                    <div  class="row col-3" >
+                                        <div class="col-6" style="padding-top:20%">
+                                            <h2 >Parents:</h2>
+                                        </div>
+                                        <div class="col-6" style="padding-top:35%">
+                                            <h4 style="margin-top:0%; ">@dog1.Name</h4>
+                                            <h4 style="margin-top:5%; ">@dog2.Name</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <a id="button" style=" padding:5%; border-radius:10px; text-decoration:none; color: white; background-color: #006DAA; font-size:25pt; float:right; margin-top:50%" asp-page="./Breed" asp-route-id="@newdogbreed" asp-route-parent1="@par1" asp-route-parent2="@par2">Breed</a>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+                        }
+                        
+                    }
+                }
+            }
+            }
+
+    }
+
+
+
+
+<p>
+    <a style="text-decoration:none; color: #006DAA;" asp-page="Create">Adopt New</a>
+</p>
+
+</div>
+
+
+
+

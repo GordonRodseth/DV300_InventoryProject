@@ -48,6 +48,7 @@ namespace Inventory.Services
 
 
             }
+            con.Close();
             return results;
         }
     }

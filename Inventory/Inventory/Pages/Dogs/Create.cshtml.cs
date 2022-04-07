@@ -23,30 +23,26 @@ namespace Inventory.Pages.Dogs
 
         }
 
+        public IList<Dog> Dogs { get; set; }
         public IList<Breed> Breeds { get; set; }
 
-        public IActionResult OnGet()
+
+        public async Task OnGetAsync()
         {
-            //Breeds= new List<Breed>();
+
             Breeds = new Models.Breeds().allBreeds;
-            return Page();
+
+
+
         }
 
         [BindProperty]
         public Dog Dog { get; set; }
 
-
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public RedirectToPageResult OnPostAdopt(string name, int breedid, int motherid, int fatherid, int kennelid, string pedigree, string sex)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Dog.Add(Dog);
-            await _context.SaveChangesAsync();
+            
+            Database.AddDog(name, breedid, motherid, fatherid, kennelid, pedigree,sex);
 
             return RedirectToPage("./Index");
 

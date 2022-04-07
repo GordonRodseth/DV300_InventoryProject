@@ -14,8 +14,20 @@ namespace Inventory.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IList<Dog> Dog { get; set; }
+        public IList<Breed> Breeds { get; set; }
+
+        public async Task OnGetAsync()
         {
+
+            Breeds = new Models.Breeds().allBreeds;
+
+
+            Dog = new Models.Dogs().allDogs;
+
+
+
         }
+
     }
 }

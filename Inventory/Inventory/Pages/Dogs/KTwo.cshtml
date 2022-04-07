@@ -14,6 +14,43 @@
 <a style="text-decoration:none; color: grey; margin-right:2%" asp-page="./KTwo">Kennel Two</a> |
 <a style="text-decoration:none; color: #006DAA; margin-right:2%" asp-page="./KThree">Kennel Three</a>
 
+<div class="dashboard row col-12">
+
+    @foreach (var item in Model.Breeds) {
+    var breed = item.Id;
+    var breedname= item.BreedName;
+    var breedimg=item.ImgUrl;
+    var breedcount = 0;
+
+    @foreach (var dog in Model.Dog)
+    {
+        if (dog.KennelID == 2)
+        {
+            if(breed == dog.BreedID)
+            {
+                breedcount = breedcount + 1;
+            }
+        }
+    }
+    if (breedcount > 0)
+    {
+        <div class="col-1"></div>
+        <div class="row col-3 dashitem">
+            <div class="dashimgcont col-6">
+                <img src=@breedimg class="dashimg"/>
+            </div>
+            
+            <div class="col-5 dashinfo">
+                <p>Breed: @breedname</p>
+                <p>Amount: @breedcount</p>
+            </div>
+            
+        </div>
+    }
+}
+
+</div>
+
 <div class="dog_cards_row row col-12">
 
 @foreach (var item in Model.Dog) {
@@ -40,6 +77,9 @@
         <div class="dog_card_info" style="height:40%">
             <p style="font-size:x-large; margin-bottom:0">@Html.DisplayFor(modelItem => item.Name)</p>
             <p style="margin-top:1%">@breedname</p>
+            <span class="material-icons">
+            @item.Sex
+            </span>
             <div style="margin-bottom:5%">
                 <a style="text-decoration:none; color: #006DAA; margin-right:7%" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a style="text-decoration:none; color: #006DAA; margin-right:7%" asp-page="./Details" asp-route-id="@item.ID">Details</a> |

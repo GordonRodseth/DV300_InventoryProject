@@ -4,7 +4,8 @@
 @{
     ViewData["Title"] = "Create";
 
-    //var breeds = ViewData["Breeds"] as Array;
+    //var breeds = ViewData["Breeds ] as Array;
+
 
 }
 
@@ -16,48 +17,51 @@
 
         <div class="row col-6">
             <h1 style="margin-top:5vh">Adopt a Dog</h1>
-                    <form method="post" class="adopt_form row col-12">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form method="post" asp-page-handler="adopt" class="adopt_form row col-12">
 
             <div class="col-6">
                 <div class="form-group">
-                    <label asp-for="Dog.BreedID" class="control-label">Breed</label>
-                    <select asp-for="Dog.BreedID" class="form-control">
+                    <label for="breedid" class="control-label">Breed</label>
+                    <select name="breedid" class="form-control">
                         <option value=0>---</option>
-                        @foreach (var dog in Model.Breeds)
+                        @foreach (var breed in Model.Breeds)
                         {
-                            <option value=@dog.Id>@dog.BreedName</option>
+                                if (breed.Parent1BreedId == breed.Parent2BreedId)
+                                {
+                                    <option value=@breed.Id>@breed.BreedName</option>
+                                }
+                                
                         }
                     </select> 
-                    <span asp-validation-for="Dog.BreedID" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
-                    <label asp-for="Dog.Name" class="control-label"></label>
-                    <input asp-for="Dog.Name" class="form-control" />
-                    <span asp-validation-for="Dog.Name" class="text-danger"></span>
+                    <label for="name" class="control-label">Name</label>
+                    <input name="name" class="form-control" type="text"/>
                 </div>
 
-                <!--<div class="form-group">
-                    <label asp-for="Dog.MotherID" class="control-label"></label>
-                    <input asp-for="Dog.MotherID" class="form-control" />
-                    <span asp-validation-for="Dog.MotherID" class="text-danger"></span>
-                </div>-->
-               <!-- <div class="form-group">
-                    <label asp-for="Dog.FatherID" class="control-label"></label>
-                    <input asp-for="Dog.FatherID" class="form-control" />
-                    <span asp-validation-for="Dog.FatherID" class="text-danger"></span>
-                </div>-->
                 <div class="form-group">
-                    <label asp-for="Dog.KennelID" class="control-label">Kennel</label>
-                    <input asp-for="Dog.KennelID" class="form-control" />
-                    <span asp-validation-for="Dog.KennelID" class="text-danger"></span>
+                    <input name="motherid" type="hidden" value=0 class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input name="fatherid" type="hidden" value=0 class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="Dog.Pedigree" class="control-label"></label>
-                    <input asp-for="Dog.Pedigree" class="form-control" />
-                    <span asp-validation-for="Dog.Pedigree" class="text-danger"></span>
+                    <label for="kennelid" class="control-label">Kennel</label>
+                    <input name="kennelid" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="pedigree" class="control-label">Pedigree: Purebred</label>
+                    <input name="pedigree" type="text" value="Purebred" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="sex" class="control-label">Sex:</label>
+                    <select name="sex" class="form-control">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select> 
                 </div>
             </div>
 

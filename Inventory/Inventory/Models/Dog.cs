@@ -12,5 +12,6 @@ namespace Inventory.Models
         public int FatherID { get; set; }
         public int KennelID { get; set; }
         public string Pedigree { get; set; } = string.Empty;
+        public string Sex { get; set; } = string.Empty;
     }
 }

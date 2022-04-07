@@ -10,35 +10,18 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Dog.ID" />
+        <form method="post" asp-page-handler="edit">
+            <input name="id" class="form-control" type="hidden" value=@Model.Dog.ID />
             <div class="form-group">
-                <label asp-for="Dog.Name" class="control-label"></label>
-                <input asp-for="Dog.Name" class="form-control" />
-                <span asp-validation-for="Dog.Name" class="text-danger"></span>
+                <label for="Name" class="control-label">Name</label>
+                <input name="dogname" class="form-control" placeholder=@Model.Dog.Name />
             </div>
+
             <div class="form-group">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Dog.BreedID" />
+                <label for="Kennel" class="control-label">Kennel</label>
+                <input name="kennel" class="form-control" placeholder=@Model.Dog.KennelID />
             </div>
-            <div class="form-group">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Dog.MotherID" />
-            </div>
-            <div class="form-group">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Dog.FatherID" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Dog.KennelID" class="control-label"></label>
-                <input asp-for="Dog.KennelID" class="form-control" />
-                <span asp-validation-for="Dog.KennelID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Dog.Pedigree" />
-            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

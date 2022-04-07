@@ -22,20 +22,20 @@ namespace Inventory.Pages.Dogs
         }
 
 
-        public IList<Dog> Dog { get;set; }
-        public IList<Breed> Breeds{ get; set; }
+
+        public IList<Dog> Dog { get; set; }
+        public IList<Breed> Breeds { get; set; }
 
         public async Task OnGetAsync()
         {
 
             Breeds = new Models.Breeds().allBreeds;
-            
 
-            Dog = await _context.Dog.ToListAsync();
 
-            
-            
+            Dog = new Models.Dogs().allDogs;
+
+
+
         }
-        
     }
 }

@@ -37,7 +37,7 @@ namespace Inventory.Pages.Dogs
         {
             //Breeds= new List<Breed>();
             Breeds = new Models.Breeds().allBreeds;
-            Dogs =  _context.Dog.ToList();
+            Dogs = new Models.Dogs().allDogs;
             //int breed = newdogbreed;
             ViewData["breed"] = id;
             ViewData["Parent1"] = parent1;
@@ -51,15 +51,19 @@ namespace Inventory.Pages.Dogs
 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public RedirectToPageResult OnPostBreed(string name, int breedid, int motherid, int fatherid, int kennelid, string pedigree, string sex, int licensenum, string username, string usersurname)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            var usercheck = Database.VerifyUser(licensenum, username, usersurname);
 
-            _context.Dog.Add(Dog);
-            await _context.SaveChangesAsync();
+            if(usercheck)
+            {
+                Database.AddDog(name, breedid, motherid, fatherid, kennelid, pedigree,sex);
+            }
+            else
+            {
+                return RedirectToPage("./Index");
+            };
+            
 
             return RedirectToPage("./Index");
 

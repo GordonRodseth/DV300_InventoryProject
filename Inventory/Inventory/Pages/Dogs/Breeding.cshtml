@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Breeding";
    // var purebreeds = ViewData["Purebreeds"] as Array;
-
+   
 }
 
 <h1 style="margin-top:5vh">Breeding</h1>
@@ -24,13 +24,33 @@
 
         foreach (var dog1 in Model.Dog)//look through all available dogs
             {
-                if (dogbreed.Parent1BreedId == dog1.BreedID)//find the dog that can act as the first parent for the desired breed
+            if (dog1.Sex == "male")
+            {
+                if ((dogbreed.Parent1BreedId == dog1.BreedID)||(dogbreed.Id==dog1.BreedID))//find the dog that can act as the first parent for the desired breed
                 {
                     var par1=dog1.ID;
-                    foreach (var dog2 in Model.Dog)//look through the available dogs again
+                    var parimg1="";
+                    foreach(var breed in Model.Breeds)
+                    {
+                        if (breed.Id == dog1.BreedID)
+                        {
+                            parimg1=breed.ImgUrl;
+                        }
+                    }
+                foreach (var dog2 in Model.Dog)//look through the available dogs again
                     {
                         var par2=dog2.ID;
-                        if (dogbreed.Parent2BreedId == dog2.BreedID)//find the other dog that can act as the second parent for desired breed
+                        var parimg2="";
+                        if (dog2.Sex == "female")
+                        {
+                            foreach(var breed in Model.Breeds)
+                        {
+                            if (breed.Id == dog2.BreedID)
+                            {
+                                parimg2=breed.ImgUrl;
+                            }
+                        }
+                        if ((dogbreed.Parent2BreedId == dog2.BreedID)||(dogbreed.Id==dog2.BreedID))//find the other dog that can act as the second parent for desired breed
                         {
                             if(dog1.ID != dog2.ID)//make sure the 2 parents are seperate entities
                             {
@@ -39,17 +59,29 @@
                                 <div class="dog_card col-12 row">
 
                                     <img src=@newdogimg class="col-3 dog_card_img" style="height: 90%; width:auto; margin-left:5%;"/>
-                                    <div class="col-4 dog_card_info" >
+                                    <div class="col-3 dog_card_info" >
                                         <h1 style=" margin-top:35%">@newdogbreedname</h1>
 
                                     </div>
-                                    <div  class="row col-3" >
-                                        <div class="col-6" style="padding-top:20%">
-                                            <h2 >Parents:</h2>
-                                        </div>
-                                        <div class="col-6" style="padding-top:35%">
-                                            <h4 style="margin-top:0%; ">@dog1.Name</h4>
-                                            <h4 style="margin-top:5%; ">@dog2.Name</h4>
+                                    <div  class="row col-4" >
+
+                                        <div class="row col-12" style="padding-top:5%">
+                                            <div class="row col-12">
+                                                <h4>Father: </h4>
+                                                <div class="imgcont col-2" style="height:10vh">
+                                                    <img style="height:75%" src=@parimg1 />
+                                                </div>
+                                                <div class=col-1></div>
+                                                <h5 class=col-5 style="padding-top:10%; ">@dog1.Name</h5>
+                                            </div>
+                                            <div class="row col-12">
+                                                <h4>Mother: </h4>
+                                                <div class="imgcont col-2" style="height:10vh">
+                                                    <img style="height:75%" src=@parimg2 />
+                                                </div>
+                                                <div class=col-1></div>
+                                                <h5 class=col-5 style="padding-top:10%; ">@dog2.Name</h5>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-2">
@@ -59,9 +91,13 @@
                             }
 
                         }
+                        }
+                        
                     }
                 }
             }
+            }
+
     }
 
 

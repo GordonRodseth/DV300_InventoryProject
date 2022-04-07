@@ -97,10 +97,36 @@ btn, btn-primary {
     border-color: #006DAA;
     border-radius: 25px;
     border-style: solid;
-    height:30vh;
+    height:35vh;
     margin:5vh;
 }
 
 #button {
     text-decoration:underline;
+}
+
+.dashboard {
+    background-color: white;
+    border-width: 1px;
+    border-color: #006DAA;
+    border-radius: 25px;
+    border-style: solid;
+    height: fit-content;
+    margin-top:2%;
+}
+
+.dashitem{
+    margin-top:2vh;
+    margin-bottom:2vh;
+    height:20vh;
+}
+
+.dashimgcont{
+    height:20vh;
+}
+.dashimg{
+    height:75%;
+}
+.dashinfo{
+    padding:10%;
 }

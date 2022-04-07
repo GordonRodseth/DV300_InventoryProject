@@ -554,3 +554,4 @@ C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\
 C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\MySql.Data.dll
 C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\Ubiety.Dns.Core.dll
 C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\Gordon\Documents\GitHub\DV300_InventoryProject\Inventory\Inventory\obj\Debug\net6.0\Inventory.csproj.ResolveComReference.cache

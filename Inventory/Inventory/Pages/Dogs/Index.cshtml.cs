@@ -31,7 +31,7 @@ namespace Inventory.Pages.Dogs
             Breeds = new Models.Breeds().allBreeds;
             
 
-            Dog = await _context.Dog.ToListAsync();
+            Dog = new Models.Dogs().allDogs;
 
             
             

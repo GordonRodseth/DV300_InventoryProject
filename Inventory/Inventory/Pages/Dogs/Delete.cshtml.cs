@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Inventory.Data;
 using Inventory.Models;
+using Inventory.Services;
 
 namespace Inventory.Pages.Dogs
 {
@@ -23,14 +24,10 @@ namespace Inventory.Pages.Dogs
         [BindProperty]
         public Dog Dog { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            Dog = await _context.Dog.FirstOrDefaultAsync(m => m.ID == id);
+            Dog = new Models.Dogs(id).selectdog;
 
             if (Dog == null)
             {
@@ -39,20 +36,9 @@ namespace Inventory.Pages.Dogs
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Dog = await _context.Dog.FindAsync(id);
-
-            if (Dog != null)
-            {
-                _context.Dog.Remove(Dog);
-                await _context.SaveChangesAsync();
-            }
+            Database.DeleteDog(id);
 
             return RedirectToPage("./Index");
         }

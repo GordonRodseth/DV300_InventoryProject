@@ -24,14 +24,11 @@ namespace Inventory.Pages.Dogs
 
         
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            Dog = await _context.Dog.FirstOrDefaultAsync(m => m.ID == id);
+
+            Dog = new Models.Dogs(id).selectdog;
 
             if (Dog == null)
             {

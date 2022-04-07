@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Inventory.Data;
 using Inventory.Models;
+using Inventory.Services;
 
 namespace Inventory.Pages.Dogs
 {
@@ -21,17 +22,14 @@ namespace Inventory.Pages.Dogs
             _context = context;
         }
 
-        [BindProperty]
+
         public Dog Dog { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            Dog = await _context.Dog.FirstOrDefaultAsync(m => m.ID == id);
+
+            Dog = new Models.Dogs(id).selectdog;
 
             if (Dog == null)
             {
@@ -40,39 +38,14 @@ namespace Inventory.Pages.Dogs
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+            public RedirectToPageResult OnPostEdit(int id, string dogname, int kennel)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(Dog).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DogExists(Dog.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            
+            Database.EditDog(id, dogname, kennel);
 
             return RedirectToPage("./Index");
         }
 
-        private bool DogExists(int id)
-        {
-            return _context.Dog.Any(e => e.ID == id);
-        }
+
     }
 }

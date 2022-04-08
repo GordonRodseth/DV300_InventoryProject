@@ -121,13 +121,22 @@
                                 if (mompedigree == "Multi Generation")
                                 {
                         <label for="pedigree" class="control-label">Pedigree: Multi Generation</label>
-                        <input value="Multi Generation" name="pedigree" class="form-control" type="hidden"/>
+                                        <input value="Multi Generation" name="pedigree" class="form-control" type="hidden"/>
+                                    }
                                 }
-                            }
-                            if (mompedigree != dadpedigree)
-                            {
+                                if (mompedigree != dadpedigree)
+                                {
+                                    if ((mompedigree == "Purebred") || (dadpedigree == "Purebred"))
+                                    {
+                        <label for="pedigree" class="control-label">Pedigree: Backbred</label>
+                        <input value="Backbred" name="pedigree" class="form-control" type="hidden"/>
+                                    }
+                                    else
+                                    {
                         <label for="pedigree" class="control-label">Pedigree: Multi Generation</label>
                         <input value="Multi Generation" name="pedigree" class="form-control" type="hidden"/>
+                                    }
+
                             }
                         }
 
@@ -140,8 +149,12 @@
                 </div>
                    
                 <div class="form-group">
-                    <label for="kennelid" class="control-label">Kennel</label>
-                    <input  name="kennelid" class="form-control" type="number"/>
+                    <label for="kennelid" class="control-label">Kennel: </label>
+                    <select name="kennelid" class="form-control">
+                        <option value="1">Kennel One</option>
+                        <option value="2">Kennel Two</option>
+                        <option value="3">Kennel Three</option>
+                    </select> 
                 </div>
  
                 <div class="form-group">

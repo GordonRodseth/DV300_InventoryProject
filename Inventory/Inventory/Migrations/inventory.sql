@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 29, 2022 at 10:41 PM
+-- Generation Time: Apr 08, 2022 at 03:32 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -107,11 +107,19 @@ INSERT INTO `breed` (`id`, `breed_name`, `parent1_id`, `parent2_id`, `img_url`) 
 
 DROP TABLE IF EXISTS `breeders`;
 CREATE TABLE IF NOT EXISTS `breeders` (
-  `license_num` int(255) NOT NULL,
+  `license_num` varchar(255) NOT NULL,
   `breeder_name` varchar(255) NOT NULL,
   `breeder_surname` varchar(255) NOT NULL,
   PRIMARY KEY (`license_num`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `breeders`
+--
+
+INSERT INTO `breeders` (`license_num`, `breeder_name`, `breeder_surname`) VALUES
+('12345', 'user', 'user'),
+('7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'breeder', 'breeder');
 
 -- --------------------------------------------------------
 
@@ -128,20 +136,22 @@ CREATE TABLE IF NOT EXISTS `dogs` (
   `father_id` int(255) NOT NULL,
   `kennel_id` int(255) NOT NULL,
   `pedigree` varchar(255) NOT NULL,
+  `sex` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
--- Table structure for table `kennel`
+-- Dumping data for table `dogs`
 --
 
-DROP TABLE IF EXISTS `kennel`;
-CREATE TABLE IF NOT EXISTS `kennel` (
-  `id` int(255) NOT NULL,
-  `kennel_name` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `dogs` (`id`, `name`, `breed_id`, `mother_id`, `father_id`, `kennel_id`, `pedigree`, `sex`) VALUES
+(12, 'Bebo', 2, 0, 0, 1, 'Purebred', 'male'),
+(11, 'Labby', 16, 0, 0, 1, 'Purebred', 'male'),
+(13, 'Corgo', 7, 0, 0, 2, 'Purebred', 'male'),
+(16, 'Puggle', 22, 0, 0, 3, 'Purebred', 'male'),
+(24, 'Bella', 4, 0, 0, 1, 'Purebred', 'female'),
+(23, 'Backo', 10, 0, 0, 1, 'Purebred', 'female'),
+(25, 'Winnie', 21, 0, 0, 1, 'Purebred', 'female');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

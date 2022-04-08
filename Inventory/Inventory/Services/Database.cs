@@ -240,7 +240,7 @@ namespace Inventory.Services
             MySqlConnection con = new MySqlConnection(constring);
             con.Open();
 
-            string sql = "SELECT * from breeders WHERE license_num='" + licensenum + "' AND breeder_name='"+name+"' AND breeder_surname='"+surname+"'";
+            string sql = "SELECT * from breeders WHERE license_num=SHA1('" + licensenum + "') AND breeder_name='"+name+"' AND breeder_surname='"+surname+"'";
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataReader rdr = cmd.ExecuteReader();
 

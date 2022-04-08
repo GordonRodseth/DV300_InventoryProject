@@ -50,7 +50,7 @@
                                 parimg2=breed.ImgUrl;
                             }
                         }
-                        if ((dogbreed.Parent2BreedId == dog2.BreedID)||(dogbreed.Id==dog2.BreedID))//find the other dog that can act as the second parent for desired breed
+                        if ((dogbreed.Parent2BreedId == dog2.BreedID)||(((dogbreed.Id==dog2.BreedID))//find the other dog that can act as the second parent for desired breed
                         {
                             if(dog1.ID != dog2.ID)//make sure the 2 parents are seperate entities
                             {
